@@ -41,11 +41,16 @@ function Index(){
     return(
         <>
             <NavigationContainer independent={true}>
-                <Stack.Navigator>
+                <Stack.Navigator screenOptions={{
+                    headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+                    headerTintColor: 'white',
+                }}>
                     <Stack.Screen name='ExpensesOverview' component={ExpensesOverView} options={{
                         headerShown: false,
                     }}/>
-                    <Stack.Screen name='ManageExpense' component={ManageExpense}/>
+                    <Stack.Screen name='ManageExpense' component={ManageExpense} options={{
+                        presentation: 'modal',
+                    }}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </>
