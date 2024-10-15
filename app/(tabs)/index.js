@@ -8,7 +8,8 @@ import ManageExpense from '../../screens/ManageExpense';
 import RecentExpenses from '../../screens/RecentExpense';
 import AllExpenses from '../../screens/AllExpenses';
 
-import { GlobalStyles } from '../../constants/styles'
+import { GlobalStyles } from '../../constants/styles';
+import IconButton from '../../components/UI/IconButton';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -20,6 +21,7 @@ function ExpensesOverView(){
             headerTintColor: 'white',
             tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
             tabBarActiveTintColor: GlobalStyles.colors.accent500,
+            headerRight: ({tintColor}) => { <IconButton icon="add" size={24} color={tintColor} onPress={() => {}}/>}
         }}>
             <Tab.Screen name='RecentExpense' component={RecentExpenses} options={{
                 title: 'Recent Expenses',
