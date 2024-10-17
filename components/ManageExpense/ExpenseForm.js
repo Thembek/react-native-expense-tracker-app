@@ -3,13 +3,14 @@ import { useState } from 'react';
 
 import Input from './Input';
 import Button from '../UI/Button';
+import { getFormattedDate } from '@/util/date';
 
 
-function ExpenseForm({ submitButtonLabel, onCancel, onSubmit }){
+function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }){
     const [inputValue, setInputValue] = useState({
-        amount: '',
-        date: '',
-        description: '',
+        amount: defaultValues ? defaultValues.amount.toString() : '',
+        date: defaultValues ? getFormattedDate(defaultValues.date) : '',
+        description: defaultValues ? defaultValues.description : '',
     });
 
     function inputChangeHandler(inputIndentifier, enteredValue){
