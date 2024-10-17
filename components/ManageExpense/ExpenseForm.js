@@ -15,9 +15,10 @@ function ExpenseForm(){
                 maxLength: 10,
                 onChangeText: () => {},
             }}/>
-            <Input label="Description" textInputConfig={{\
-                
-            }}/>
+            <Input label="Description" textInputConfig={{
+                multiline: true, 
+                //autoCapitalize: 'none'
+            }} />
         </View>
     )
 }
